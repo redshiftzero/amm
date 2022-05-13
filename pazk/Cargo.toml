@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 ark-ff = "0.3"
 ark-bls12-377 = "0.3"
+nalgebra = "0.31"
 rand_core = { version = "0.6.3", features = ["getrandom"] }

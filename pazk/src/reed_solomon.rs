@@ -5,7 +5,6 @@ use rand_core::RngCore;
 /// Represents the `RawData` we want to encode.
 pub struct RawData(pub Vec<u8>);
 
-/// Represents an Reed-Solomon encoding of the `RawData`.
 impl RawData {
     /// Get the Reed-Solomon encoding evaluated at a `ChallengeElement`
     pub fn reed_solomon_encoding(&self, r: &ChallengeElement) -> Evaluation {
