@@ -1,3 +1,5 @@
+///! Freivalds' algorithm for verifying matrix multiplication
+///! O(n^2) time
 use ark_bls12_377::Fq;
 use ark_ff::{Field, UniformRand};
 use nalgebra::{DMatrix, DVector};
@@ -21,9 +23,9 @@ impl Verifier {
     pub fn run<R: RngCore>(&self, rng: &mut R) -> bool {
         let r = Fq::rand(rng);
         let n = self.C.nrows();
-        let x_vec: Vec<Fq> = (0..n)
+        let x_vec: Vec<Fq> = (0..=n - 1)
             .into_iter()
-            .map(|i| (r).pow(&[(i + 1) as u64]))
+            .map(|i| (r).pow(&[i as u64]))
             .collect();
         let x = DVector::from_row_slice(&x_vec);
         let Cx = self.C.clone() * x.clone();

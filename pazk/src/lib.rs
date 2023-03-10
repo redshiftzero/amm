@@ -3,5 +3,6 @@
 //! Reference: https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html
 
 mod freivalds;
-mod reed_solomon;
 mod lagrange;
+mod reed_solomon;
+mod sumcheck;

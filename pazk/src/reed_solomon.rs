@@ -3,6 +3,9 @@ use ark_ff::{Field, UniformRand, Zero};
 use rand_core::RngCore;
 
 /// Represents the `RawData` we want to encode.
+///
+/// In the RS setting, both prover and verifier have a large file
+/// and they want to determine efficiently if they are the same.
 pub struct RawData(pub Vec<u8>);
 
 impl RawData {
